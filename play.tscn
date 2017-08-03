@@ -1,0 +1,154 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://babyblue.fnt" type="BitmapFont" id=1]
+[ext_resource path="res://pile.gd" type="Script" id=2]
+[ext_resource path="res://accept.gd" type="Script" id=3]
+[ext_resource path="res://drnim.gd" type="Script" id=4]
+
+[node name="Node" type="Node"]
+
+[node name="Body" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="Organ 1" type="Label" parent="Body"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 105.0
+margin/top = 132.0
+margin/right = 258.0
+margin/bottom = 187.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "1"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 2 )
+
+[node name="Organ 2" type="Label" parent="Body"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 481.0
+margin/top = 129.0
+margin/right = 634.0
+margin/bottom = 184.0
+custom_fonts/font = ExtResource( 1 )
+text = "2"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 2 )
+
+[node name="Organ 3" type="Label" parent="Body"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 310.0
+margin/top = 229.0
+margin/right = 463.0
+margin/bottom = 284.0
+custom_fonts/font = ExtResource( 1 )
+text = "3"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 2 )
+
+[node name="Organ4" type="Label" parent="Body"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 111.0
+margin/top = 301.0
+margin/right = 264.0
+margin/bottom = 356.0
+custom_fonts/font = ExtResource( 1 )
+text = "3"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 2 )
+
+[node name="Organ5" type="Label" parent="Body"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 579.0
+margin/top = 370.0
+margin/right = 732.0
+margin/bottom = 425.0
+custom_fonts/font = ExtResource( 1 )
+text = "3"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 2 )
+
+[node name="UI" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="Accept" type="Label" parent="UI"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 310.0
+margin/top = 131.0
+margin/right = 463.0
+margin/bottom = 186.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.988281, 0.950129, 0.0115814, 1 )
+text = "Accept"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 3 )
+
+[node name="DrNim" type="Node" parent="."]
+
+script/script = ExtResource( 4 )
+
+[connection signal="input_event" from="Body/Organ 1" to="Body/Organ 1" method="_on_Pile_input_event"]
+
+[connection signal="input_event" from="Body/Organ 2" to="Body/Organ 2" method="_on_Pile_input_event"]
+
+[connection signal="input_event" from="Body/Organ 3" to="Body/Organ 3" method="_on_Pile_input_event"]
+
+[connection signal="input_event" from="Body/Organ4" to="Body/Organ4" method="_on_Pile_input_event"]
+
+[connection signal="input_event" from="Body/Organ5" to="Body/Organ5" method="_on_Pile_input_event"]
+
+[connection signal="input_event" from="UI/Accept" to="DrNim" method="_on_Accept_input_event"]
+
+[connection signal="input_event" from="UI/Accept" to="UI/Accept" method="_on_Accept_input_event"]
+
+
